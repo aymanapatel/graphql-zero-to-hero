@@ -66,3 +66,23 @@ This project has common `GraphQLExceptionHandler` with 2 methods
 === `DataFetcherResult`
 
 Contains both data, errors and local context  to be sent as final result to graphql server.
+
+
+=== Mutation
+
+> Write operations
+
+
+==== Upload file
+
+Use `DataFetchingEnvironment` and `DefaultGraphQLServletContext` from the GraphQL Servers
+
+
+
+```curl
+curl --location --request POST 'http://localhost:8080/graphql' \
+--form 'operations="{\"query\":\"mutation {uploadFile}\" , \"variables\":{}}"' \
+--form 'file=@"/D:/Coding/learngraphql-java/README.adoc"' // Remem  ber this is of type File. CURL import on postman will fail this command
+
+// "{"query":"mutation {uploadFile}" , "variables":{}}"
+```
