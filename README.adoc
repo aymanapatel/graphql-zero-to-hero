@@ -61,3 +61,8 @@ This project has common `GraphQLExceptionHandler` with 2 methods
 - Defined in `exception.CustomGraphQLErrorHandler`
 
 - `CustomGraphQLErrorHandler.processErrors` is called instead of `DefaultGraphQLErrorHandler.processErrors`
+
+
+=== `DataFetcherResult`
+
+Contains both data, errors and local context  to be sent as final result to graphql server.
