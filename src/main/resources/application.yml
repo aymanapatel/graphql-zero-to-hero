@@ -11,6 +11,7 @@ graphql:
     schema-location-pattern: '**/*.graphqls'
   servlet:
     max-query-depth: 3
+    exception-handlers-enabled: false
   playground:
     headers:
       Authorization: Bearer TOKEN

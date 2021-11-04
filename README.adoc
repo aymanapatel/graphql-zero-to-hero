@@ -39,6 +39,7 @@ WARNING: I still can't grasp the difference and there is not official doc for th
 
 === Exception Handling
 
+==== Default GraphQL Exception Handler
 
 `DefaultGraphQLErrorHandler.processErrors` is called for any `Runtime.class` or `GraphQLException.class` is called (thrown by `ThrowableGraphQLError`)
 
@@ -51,3 +52,12 @@ This project has common `GraphQLExceptionHandler` with 2 methods
 2. `ThrowableGraphQLError handle(RuntimeException graphQLException)`
 
 - For Server side errors (Giving NO info about Server error)
+
+
+==== Custom GraphQL ErrorHandler
+
+> Can extend `GraphQLErrorHandler` for custom exception handling.
+
+- Defined in `exception.CustomGraphQLErrorHandler`
+
+- `CustomGraphQLErrorHandler.processErrors` is called instead of `DefaultGraphQLErrorHandler.processErrors`
