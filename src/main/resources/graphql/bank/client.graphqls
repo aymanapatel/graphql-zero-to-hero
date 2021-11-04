@@ -1,6 +1,6 @@
 type Client {
     firstName: String!
-    middleName: [String!] # [] is optional operator
+    middleName: [String!] # [] is array operator
     lastName: String!
     client: Client! # MOE: Source of DDOS attack.
 }
