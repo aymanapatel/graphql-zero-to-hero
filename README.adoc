@@ -86,3 +86,15 @@ curl --location --request POST 'http://localhost:8080/graphql' \
 
 // "{"query":"mutation {uploadFile}" , "variables":{}}"
 ```
+
+
+== DataFetchingEnviroment
+
+https://www.graphql-java.com/documentation/v11/data-fetching/[Documentation]
+
+> Powerful object with useful methods for GraphQL interceptors
+
+
+1. `getSelectionSet` Useful for DB layer
+2. `getContext`: Useful for Auth
+etc
