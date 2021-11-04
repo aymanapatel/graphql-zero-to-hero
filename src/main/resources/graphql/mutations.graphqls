@@ -1,5 +1,6 @@
-# All mutations of the GraphQl server
+scalar NonNegativeInt # Coming from graphql.scalars.numeric.NonNegativeIntScalar;
 
+# All mutations of the GraphQl server
 type Mutation {
     # Create Bank Account
     createBankAccount(input: CreateBankAccountInput): BankAccount!

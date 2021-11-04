@@ -98,3 +98,15 @@ https://www.graphql-java.com/documentation/v11/data-fetching/[Documentation]
 1. `getSelectionSet` Useful for DB layer
 2. `getContext`: Useful for Auth
 etc
+
+
+== Scalars
+
+
+GraphQL spec includes default scalar types `Int`, `Float`, `String`, `Boolean`, and `ID`. Some applications need to support other atomic data types (such as `Date`) or add validation to an existing type(`NonNegativeInteger`)
+
+To enable this
+
+1. Define custom scalar types. https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/[Apollo Doc]
+
+2. Use library. https://github.com/graphql-java/graphql-java-extended-scalars[Java GraphQL Scalar]

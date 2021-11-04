@@ -12,7 +12,7 @@ query GET_BANK_ACCOUNT($id: ID){
 
 # Create bank account
 mutation CREATE_BANK_ACCOUNT {
-    createBankAccount(input: { firstName: "Ayman"}) {
+    createBankAccount(input: { firstName: "Ayman", age: 21}) {
         id
         currency
     }
