@@ -13,7 +13,7 @@ graphql:
   tools:
     schema-location-pattern: '**/*.graphqls'
   servlet:
-    max-query-depth: 3
+    max-query-depth: 10
     exception-handlers-enabled: false
   playground:
     headers:

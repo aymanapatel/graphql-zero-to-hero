@@ -1,5 +1,6 @@
 # All available queries on this server
-
 type Query {
     bankAccount(id: ID): BankAccount
+    # bankAccounts(first: Int!, after: String): BankAccountConnection @connection (for: "BankAccount")
+    bankAccounts(first: Int!, after: String): BankAccountConnection @connection (for: "BankAccount")
 }

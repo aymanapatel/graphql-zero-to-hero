@@ -137,3 +137,59 @@ Intergaces for request states.
     - `onRequest`
     - `onSuccess`
     - `onFinally`
+
+
+== Pagination
+
+> https://graphql.org/learn/pagination/[GraphQL docs]
+
+```javascript
+// GET Bank Accounts Pagination
+query GET_BANK_ACCOUNTS{
+    bankAccounts(first: 5, after: "<uuid>") {
+        edges {
+            cursor // uuid
+            node {
+                id
+            }
+        }
+        pageInfo {
+            hasPreviousPage
+            hasNextPage
+            startCursor
+            endCursor
+        }
+    }
+}
+```
+
+Response:
+
+```javascript
+{
+  "data": {
+    "bankAccounts": {
+      "edges": [
+        {
+          "cursor": "NDEwZjU5MTktZTUwYi00NzkwLWFhZTMtNjVkMmQ0YjIxYzc3",
+          "node": {
+            "id": "410f5919-e50b-4790-aae3-65d2d4b21c77"
+          }
+        },
+        {
+          "cursor": "NDhlNGE0ODQtYWYyYy00MzY2LThjZDQtMjUzMzA1OTc0NzNm",
+          "node": {
+            "id": "48e4a484-af2c-4366-8cd4-25330597473f"
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasPreviousPage": true,
+        "hasNextPage": false,
+        "startCursor": "NDEwZjU5MTktZTUwYi00NzkwLWFhZTMtNjVkMmQ0YjIxYzc3",
+        "endCursor": "NDhlNGE0ODQtYWYyYy00MzY2LThjZDQtMjUzMzA1OTc0NzNm"
+      }
+    }
+  }
+}
+```

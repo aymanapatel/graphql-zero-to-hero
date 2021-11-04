@@ -17,3 +17,21 @@ mutation CREATE_BANK_ACCOUNT {
         currency
     }
 }
+
+# GET Bank Accounts Pagination
+query GET_BANK_ACCOUNTS{
+    bankAccounts(first: 5, after: "<cursor-uuid>") {
+        edges {
+            cursor
+            node {
+                id
+            }
+        }
+        pageInfo {
+            hasPreviousPage
+            hasNextPage
+            startCursor
+            endCursor
+        }
+    }
+}
