@@ -126,3 +126,14 @@ public GraphQLScalarType nonNegativeInt() {
 - TODO: Typescript
 
 3.
+
+
+== `GraphQLServletListener`
+
+Intergaces for request states.
+
+1. `onRequest`
+2. `RequestCallback`
+    - `onRequest`
+    - `onSuccess`
+    - `onFinally`
