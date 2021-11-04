@@ -1,4 +1,6 @@
 scalar NonNegativeInt # Coming from graphql.scalars.numeric.NonNegativeIntScalar;
+scalar Date           # graphql.scalars.date;
+scalar DateTime       # graphql.scalars.datetime;
 
 # All mutations of the GraphQl server
 type Mutation {

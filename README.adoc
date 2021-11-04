@@ -110,3 +110,19 @@ To enable this
 1. Define custom scalar types. https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/[Apollo Doc]
 
 2. Use library. https://github.com/graphql-java/graphql-java-extended-scalars[Java GraphQL Scalar]
+
+=== Steps to use custom Scalar
+
+1. Add `scalar <ScalarName>` in `.graphqls` or any GrpahQL file.
+2. For Java, create a Bean. Example
++
+----
+@Bean
+public GraphQLScalarType nonNegativeInt() {
+    return ExtendedScalars.NonNegativeInt;
+}
+----
+
+- TODO: Typescript
+
+3.
