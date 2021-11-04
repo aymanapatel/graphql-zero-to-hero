@@ -4,10 +4,9 @@ Ayman Patel
 
 == GraphQL Best practices
 
-=== DDOSa
-
+=== DDOS
 1. Attack
-image:img/1.DDOSAttackProblem.jpg[]]
+image:img/1.DDOSAttackProblem.jpg[]
 
 
 2. Solution

@@ -11,3 +11,11 @@ graphql:
     schema-location-pattern: '**/*.graphqls'
   servlet:
     max-query-depth: 3
+  playground:
+    headers:
+      Authorization: Bearer TOKEN
+    tabs:
+      - name: Bank account sample query
+        query: classpath:playground/bank_account.graphql
+        variables: classpath:playground/bank_account_variables.json
+    enabled: true # Disable for prod environments
