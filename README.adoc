@@ -1,0 +1,6 @@
+= GraphQL Java
+Ayman Patel
+:toc:
+
+== GraphQL Best practices
+
