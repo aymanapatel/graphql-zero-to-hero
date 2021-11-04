@@ -4,3 +4,21 @@ Ayman Patel
 
 == GraphQL Best practices
 
+=== DDOSa
+
+1. Attack
+image:img/1.DDOSAttackProblem.jpg[]]
+
+
+2. Solution
+
+
+
+Set `max-query-depth` in `application.yml`
+
+```yml
+graphql:
+    max-query-depth: 3
+```
+
+image:img/1.DDOSAttackSolution.jpg[]]

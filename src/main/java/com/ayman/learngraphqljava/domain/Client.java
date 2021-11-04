@@ -14,6 +14,7 @@ public class Client {
     String firstName;
     List<String> middleName;
     String lastName;
+    Client client;
 
 
 }
