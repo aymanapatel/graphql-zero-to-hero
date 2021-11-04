@@ -1,4 +1,4 @@
-package com.ayman.learngraphqljava.domain;
+package com.ayman.learngraphqljava.domain.bank;
 
 
 import lombok.Builder;

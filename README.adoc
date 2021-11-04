@@ -1,6 +1,7 @@
 = GraphQL Java
 Ayman Patel
 :toc:
+:icons: font
 
 == GraphQL Best practices
 
@@ -20,4 +21,18 @@ graphql:
     max-query-depth: 3
 ```
 
-image:img/1.DDOSAttackSolution.jpg[]]
+image:img/1.DDOSAttackSolution.jpg[]
+
+
+=== Playground
+
+> DO NOT ENABLE Playground for Prod.
+
+
+
+== GraphQL Java
+
+
+==== `GraphQLResolver` vs `GraphQLQueryResolver<DataClassName>`
+
+WARNING: I still can't grasp the difference and there is not official doc for these Classes!
