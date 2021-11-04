@@ -36,3 +36,18 @@ image:img/1.DDOSAttackSolution.jpg[]
 ==== `GraphQLResolver` vs `GraphQLQueryResolver<DataClassName>`
 
 WARNING: I still can't grasp the difference and there is not official doc for these Classes!
+
+=== Exception Handling
+
+
+`DefaultGraphQLErrorHandler.processErrors` is called for any `Runtime.class` or `GraphQLException.class` is called (thrown by `ThrowableGraphQLError`)
+
+This project has common `GraphQLExceptionHandler` with 2 methods
+
+1. `ThrowableGraphQLError handle(GraphQLException graphQLException)`
+
+- For Client side errors (Giving MORE info about Client error)
+
+2. `ThrowableGraphQLError handle(RuntimeException graphQLException)`
+
+- For Server side errors (Giving NO info about Server error)
