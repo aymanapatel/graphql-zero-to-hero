@@ -193,3 +193,7 @@ Response:
   }
 }
 ```
+
+Usually pagination is offset-based.
+ID-based based pagination uses unique identifier which is more reliable than offset-based.
+
