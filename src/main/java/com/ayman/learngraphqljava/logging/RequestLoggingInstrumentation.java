@@ -34,10 +34,13 @@ public class RequestLoggingInstrumentation extends SimpleInstrumentation {
         return SimpleInstrumentationContext.whenCompleted(((executionResult, throwable) -> {
             var duration = Duration.between(start, Instant.now(clock));
             if (throwable == null) {
-              log.info("Logging Successful Query in {}", duration);
+//              log.info("Logging Successful Query in {}", duration);
             } else {
                 log.warn("Logging failed in {} Throwing: {}", duration, throwable);
             }
+            // If we have async resolvers, this callback can occur in the thread-pool and not the NIO thread.
+            // In that case, the LoggingListener will be used as a fallback to clear the NIO thread.
+            MDC.clear();
         }));
 
 

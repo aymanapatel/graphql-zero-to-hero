@@ -3,6 +3,7 @@ package com.ayman.learngraphqljava.listener;
 import graphql.kickstart.servlet.core.GraphQLServletListener;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ public class LoggingListener implements GraphQLServletListener {
 
     @Override
     public RequestCallback onRequest(HttpServletRequest request, HttpServletResponse response) {
-        log.info("Start: GraphQL Request started");
+//        log.info("Start: GraphQL Request started");
         var startTime = Instant.now(clock);
         return new RequestCallback() {
             @Override
@@ -31,13 +32,16 @@ public class LoggingListener implements GraphQLServletListener {
 
             @Override
             public void onError(HttpServletRequest request, HttpServletResponse response, Throwable throwable) {
-                //no-op
+                log.error("Caught exception in listener.", throwable);
             }
 
             @Override
             public void onFinally(HttpServletRequest request, HttpServletResponse response) {
-                log.info("Completed Request: Time Taken {} ", Duration.between(startTime, Instant.now(clock)));
+                // This callback will be called post graphql lifecycle.
+                // If we are multi-threading we can clear the original NIO thread MDC variables here.
+                MDC.clear();
             }
+
         };
     }
 

@@ -1,6 +1,7 @@
 package com.ayman.learngraphqljava.context.dataloader;
 
 import com.ayman.learngraphqljava.service.BalanceService;
+import com.ayman.learngraphqljava.util.CorrelationIdPropagationExecutor;
 import lombok.RequiredArgsConstructor;
 import org.dataloader.DataLoader;
 import org.dataloader.DataLoaderRegistry;
@@ -20,7 +21,8 @@ public class DataLoaderRegistryFactory {
     private final BalanceService balanceService;
     public  static final String BALANCE_DATA_LOADER = "BALANCE_DATA_LOADER";
 
-    private static final Executor balanceThreadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    private static final Executor balanceThreadPool = CorrelationIdPropagationExecutor.wrap(
+            Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()));
 
     /**
      * Batch balance response for each query
