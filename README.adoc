@@ -205,3 +205,12 @@ We used `GraphQLServletContext` in junction with `GraphQLServletContextBuilder` 
 
 NOTE: `user_id` is the header name given in HTTP Headers in GraphQL playground.
 
+== N+1 Problem
+
+
+== Instrumentation and Tracing
+
+
+> Ability to GraphQL query and when it is executing in server, provide intrument data (log data; tracing) during execution of query.
+
+
