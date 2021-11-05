@@ -7,6 +7,7 @@ import graphql.execution.instrumentation.SimpleInstrumentationContext;
 import graphql.execution.instrumentation.parameters.InstrumentationExecutionParameters;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 
 import java.time.Clock;
@@ -18,6 +19,7 @@ import java.time.Instant;
 @RequiredArgsConstructor
 public class RequestLoggingInstrumentation extends SimpleInstrumentation {
 
+    public static final String CORRELATION_ID = "correlation_id";
 
     private final Clock clock;
 
@@ -26,16 +28,15 @@ public class RequestLoggingInstrumentation extends SimpleInstrumentation {
 
         var start = Instant.now(clock);
 
-        var executionId = parameters.getExecutionInput().getExecutionId();
-
-        log.info("Logging: {}: query with variables: {} ", executionId, parameters.getQuery());
+        MDC.put(CORRELATION_ID, parameters.getExecutionInput().getExecutionId().toString());
+//        log.info("Logging: Query {} with variables: {} ", parameters.getQuery(), parameters.getVariables());
 
         return SimpleInstrumentationContext.whenCompleted(((executionResult, throwable) -> {
             var duration = Duration.between(start, Instant.now(clock));
             if (throwable == null) {
-              log.info("Logging {}: Successful Query in {}", executionId, duration);
+              log.info("Logging Successful Query in {}", duration);
             } else {
-                log.warn("Logging {}: failed in {} Throwing: {}", executionId, duration, throwable);
+                log.warn("Logging failed in {} Throwing: {}", duration, throwable);
             }
         }));
 

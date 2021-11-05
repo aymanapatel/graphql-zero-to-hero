@@ -6,6 +6,7 @@ import org.dataloader.DataLoader;
 import org.dataloader.DataLoaderRegistry;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -34,7 +35,7 @@ public class DataLoaderRegistryFactory {
         return registry;
     }
 
-    private DataLoader<?,?> createBalanceDataLoader(String userId) {
+    private DataLoader<UUID, BigDecimal> createBalanceDataLoader(String userId) {
 
 
         // a a b would give ab for DataLoader.getDataLaoder
