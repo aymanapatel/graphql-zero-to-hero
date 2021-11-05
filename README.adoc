@@ -130,7 +130,7 @@ public GraphQLScalarType nonNegativeInt() {
 
 == `GraphQLServletListener`
 
-Intergaces for request states.
+Interfaces for request states.
 
 1. `onRequest`
 2. `RequestCallback`
@@ -196,4 +196,12 @@ Response:
 
 Usually pagination is offset-based.
 ID-based based pagination uses unique identifier which is more reliable than offset-based.
+
+== Custom Context
+
+We have custom context so that we can intercept network request and get info such as header from `HttpServletRequest` from `GraphQLServletContext`
+
+We used `GraphQLServletContext` in junction with `GraphQLServletContextBuilder` to get Context info.
+
+NOTE: `user_id` is the header name given in HTTP Headers in GraphQL playground.
 
