@@ -1,8 +1,10 @@
 package com.ayman.learngraphqljava.context;
 
+import com.ayman.learngraphqljava.context.dataloader.DataLoaderRegistryFactory;
 import graphql.kickstart.execution.context.GraphQLContext;
 import graphql.kickstart.servlet.context.DefaultGraphQLServletContext;
 import graphql.kickstart.servlet.context.GraphQLServletContextBuilder;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -14,17 +16,22 @@ import javax.websocket.server.HandshakeRequest;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class CustomGraphQLContextBuilder implements GraphQLServletContextBuilder {
 
-    @Override
-    public GraphQLContext build(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    private final DataLoaderRegistryFactory dataLoaderRegistryFactory;
 
-        var userId = httpServletRequest.getHeader("user_id"); // Pass in GraphQL Playground
+    @Override
+    public GraphQLContext build(HttpServletRequest httpServletRequest,
+                                HttpServletResponse httpServletResponse) {
+
+        var userId = httpServletRequest.getHeader("user_id");
 
         var context = DefaultGraphQLServletContext.createServletContext()
-                                    .with(httpServletRequest)
-                                    .with(httpServletResponse)
-                                    .build();
+                .with(httpServletRequest)
+                .with(httpServletResponse)
+                .with(dataLoaderRegistryFactory.create(userId))
+                .build();
 
         return new CustomGraphQLContext(userId, context);
     }

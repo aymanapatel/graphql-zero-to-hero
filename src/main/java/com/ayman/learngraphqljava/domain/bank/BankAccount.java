@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Setter;
 import lombok.Value;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.UUID;
@@ -19,4 +20,5 @@ public class BankAccount {
     Currency currency;
     ZonedDateTime createdAt;
     LocalDateTime createdOn;
+    BigDecimal balances;
 }

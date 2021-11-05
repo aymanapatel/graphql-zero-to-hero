@@ -19,13 +19,18 @@ mutation CREATE_BANK_ACCOUNT {
 }
 
 # GET Bank Accounts Pagination
+
+
+# GET Bank Accounts Pagination
 query GET_BANK_ACCOUNTS{
-    bankAccounts(first: 5, after: "<cursor-uuid>") {
+    bankAccounts(first: 5) {
         edges {
             cursor
             node {
                 id
+                balances
             }
+
         }
         pageInfo {
             hasPreviousPage

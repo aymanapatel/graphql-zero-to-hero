@@ -224,4 +224,8 @@ NOTE: `user_id` is the header name given in HTTP Headers in GraphQL playground.
 image::img/3.Tracing.png[Tracing]
 
 
+== Data Loader
 
+Very important.
+
+WARNING: Please read this https://github.com/graphql-java/java-dataloader[Github Java Dataloader] doc
