@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class BankAccountResolver implements GraphQLQueryResolver {
+public class BankAccountQueryResolver implements GraphQLQueryResolver {
 
     private final BankAccountRepository bankAccountRepository;
     private final CursorUtil cursorUtil;
