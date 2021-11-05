@@ -211,6 +211,17 @@ NOTE: `user_id` is the header name given in HTTP Headers in GraphQL playground.
 == Instrumentation and Tracing
 
 
-> Ability to GraphQL query and when it is executing in server, provide intrument data (log data; tracing) during execution of query.
+> Ability to GraphQL query and when it is executing in server, provide instrument data (log data; tracing) during execution of query.
+
+
+=== Tracing
+
+
+`application.properties`
+
+- `graphql.servolet.tracing-enabled=true` Get tracing info on RH corner
+
+image::img/3.Tracing.png[Tracing]
+
 
 

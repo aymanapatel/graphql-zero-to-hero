@@ -12,9 +12,11 @@ server:
 graphql:
   tools:
     schema-location-pattern: '**/*.graphqls'
+
   servlet:
     max-query-depth: 10
     exception-handlers-enabled: false
+    tracing-enabled: true
   playground:
     headers:
       Authorization: Bearer TOKEN
