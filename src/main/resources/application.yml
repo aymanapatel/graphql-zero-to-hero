@@ -19,7 +19,7 @@ graphql:
     exception-handlers-enabled: false
     tracing-enabled: true
     cors:
-      allowed-origins: 'https://f1935c007a0f.up.railway.app'
+      allowed-origins: 'https://graphql-zero-to-hero-production.up.railway.app'
   playground:
     headers:
       Authorization: Bearer TOKEN
