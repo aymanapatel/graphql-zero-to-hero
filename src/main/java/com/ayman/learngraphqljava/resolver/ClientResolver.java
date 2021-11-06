@@ -2,14 +2,11 @@ package com.ayman.learngraphqljava.resolver;
 
 import com.ayman.learngraphqljava.domain.bank.BankAccount;
 import com.ayman.learngraphqljava.domain.bank.Client;
-import graphql.execution.DataFetcherResult;
-import graphql.kickstart.execution.error.GenericGraphQLError;
 import graphql.kickstart.tools.GraphQLResolver;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

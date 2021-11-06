@@ -3,7 +3,6 @@ package com.ayman.learngraphqljava.resolver.bank.query;
 import com.ayman.learngraphqljava.connection.CursorUtil;
 import com.ayman.learngraphqljava.context.CustomGraphQLContext;
 import com.ayman.learngraphqljava.domain.bank.BankAccount;
-import com.ayman.learngraphqljava.domain.bank.Client;
 import com.ayman.learngraphqljava.domain.bank.Currency;
 import com.ayman.learngraphqljava.repository.BankAccountRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
