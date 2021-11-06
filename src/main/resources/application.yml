@@ -13,10 +13,13 @@ graphql:
   tools:
     schema-location-pattern: '**/*.graphqls'
 
+
   servlet:
     max-query-depth: 10
     exception-handlers-enabled: false
     tracing-enabled: true
+    cors:
+      allowed-origins: 'https://f1935c007a0f.up.railway.app'
   playground:
     headers:
       Authorization: Bearer TOKEN
